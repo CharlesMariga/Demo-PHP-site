@@ -12,6 +12,8 @@
 
                         <a href="/about" class="<?= $_SERVER['REQUEST_URI'] === '/about' ? "bg-gray-900 text-white" : "text-gray-300" ?> px-3 py-2 rounded-md text-sm font-medium">About</a>
 
+                        <a href="/notes" class="<?= $_SERVER['REQUEST_URI'] === '/notes' ? "bg-gray-900 text-white" : "text-gray-300" ?> px-3 py-2 rounded-md text-sm font-medium">Notes</a>
+
                         <a href="/contact" class="<?= $_SERVER['REQUEST_URI'] === '/contact' ? "bg-gray-900 text-white" : "text-gray-300" ?> px-3 py-2 rounded-md text-sm font-medium">Contact</a>
                     </div>
                 </div>

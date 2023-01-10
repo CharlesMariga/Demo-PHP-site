@@ -12,10 +12,10 @@ class Database
         ]);
     }
 
-    function query($query)
+    function query($query, $options = [])
     {
         $statement = $this->connection->prepare($query);
-        $statement->execute();
+        $statement->execute($options);
 
         return $statement;
     }
