@@ -2,7 +2,7 @@
 
 require("function.php");
 
-require("response.php");
+require("Response.php");
 
 require("Database.php");
 

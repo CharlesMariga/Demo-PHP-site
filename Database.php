@@ -3,6 +3,7 @@
 class Database
 {
     public $connection;
+    public $statement;
 
     function __construct($config, $username = 'root', $password = '')
     {
@@ -14,9 +15,30 @@ class Database
 
     function query($query, $options = [])
     {
-        $statement = $this->connection->prepare($query);
-        $statement->execute($options);
+        $this->statement = $this->connection->prepare($query);
+        $this->statement->execute($options);
 
-        return $statement;
+        return $this;
+    }
+
+    public function find()
+    {
+        return $this->statement->fetch();
+    }
+
+    public function findOrFail()
+    {
+        $result = $this->find();
+
+        if (!$result) {
+            abort(Response::NOT_FOUND);
+        }
+
+        return $result;
+    }
+
+    public function get()
+    {
+        return $this->statement->fetchAll();
     }
 }
