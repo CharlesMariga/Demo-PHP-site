@@ -12,7 +12,7 @@ require('partials/banner.php');
         <p class="mb-6">
             <a href="/notes" class="text-blue-500 underline">&larr; Go back</a>
         </p>
-        <p><?= $note['body'] ?></p>
+        <p><?= htmlspecialchars($note['body']) ?></p>
     </div>
 </main>
 
